@@ -1,0 +1,1850 @@
+[
+  {
+    "question": "Che cosa succede quando viene sollevata una trap durante la gestione di un interrupt?",
+    "answers": [
+      {
+        "text": "l'interrupt viene messo in pausa",
+        "correct": true
+      },
+      {
+        "text": "la trap viene messa in coda all'interrupt",
+        "correct": false
+      },
+      {
+        "text": "non succede mai",
+        "correct": false
+      },
+      {
+        "text": "la trap viene ignorata",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Quale \u00e8 il compito di un Virtual File System (VFS)",
+    "answers": [
+      {
+        "text": "fare la mappatura di funzionalit\u00e0 tra file system eterogenei",
+        "correct": true
+      },
+      {
+        "text": "virtualizzare dei dischi all'interno del sistema",
+        "correct": false
+      },
+      {
+        "text": "fare la mappatura di un file system in memoria virtuale",
+        "correct": false
+      },
+      {
+        "text": "virtualizzare un file system",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In cosa consiste il sistema di journaling di un file system?",
+    "answers": [
+      {
+        "text": "tenere traccia delle operazioni dell'utente per ragioni di sicurezza",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia delle modifiche del file system per favorire il ripristino in caso di crash",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia dei file pi\u00f9 frequentemente acceduti per ottimizzare le prestazioni",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia delle operazioni sul disco per prevenire le inconsistenze",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Che tipo di algoritmo \u00e8 il garanteed scheduling?",
+    "answers": [
+      {
+        "text": "garantisce che non ci siano deadlock",
+        "correct": false
+      },
+      {
+        "text": "distribuisci uniformemente le risorse ai processi",
+        "correct": true
+      },
+      {
+        "text": "distribuisci uniformemente le risorse agli utenti",
+        "correct": false
+      },
+      {
+        "text": "garantisce che non ci siano inversioni di priorit\u00e0 tra processi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Parlando di deadlock, che cosa si intende con il termine stato sicuro?",
+    "answers": [
+      {
+        "text": "uno stato del sistema in cui non siamo in presenza di deadlock",
+        "correct": false
+      },
+      {
+        "text": "uno stato del sistema per cui vi \u00e8 la possibilit\u00e0 che tutti i processi termino",
+        "correct": true
+      },
+      {
+        "text": "uno stato di un processo in cui questo ha ricevuto tutte le risorse che gli sono necessarie",
+        "correct": false
+      },
+      {
+        "text": "uno stato di un processo in cui \u00e8 sicuro che questo possa arrivare a terminazione",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa vuol dire fare SWAP-IN di un processo",
+    "answers": [
+      {
+        "text": "mandarlo sul disco perch\u00e8 \u00e8 stato a lungo nello stato di bloccato",
+        "correct": false
+      },
+      {
+        "text": "mandarlo su disco perch\u00e8 abbiamo necessit\u00e0 di spazio",
+        "correct": false
+      },
+      {
+        "text": "scambiare il suo working set con un altro",
+        "correct": false
+      },
+      {
+        "text": "portarlo in memoria",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Quale \u00e8 la funzione svolta da un DMA controller?",
+    "answers": [
+      {
+        "text": "permettere al controller di una periferica di usare il bus dati",
+        "correct": false
+      },
+      {
+        "text": "ricevere richieste di I/O provenienti dalla CPU e le inoltra al controller della periferica",
+        "correct": true
+      },
+      {
+        "text": "trasferire i dati dal buffer di una periferica alla memoria centrale",
+        "correct": false
+      },
+      {
+        "text": "ricevere gli interrupt provenienti dalle periferiche e li gestisce",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Perch\u00e8 \u00e8 utile fare uso di un buffer all'interno di un device driver?",
+    "answers": [
+      {
+        "text": "perch\u00e8 aumenta le prestazioni del sistema aumentando la velocit\u00e0 dell'hardware della periferica",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 richiesto dai dispositivi che trasferiscono i dati a blocchi ma non ha nessun effetto pratico",
+        "correct": false
+      },
+      {
+        "text": "perch\u00e8 \u00e8 necessario nel caso di device a blocchi se il blocco ha una dimensione inferiore a quelle del buffer",
+        "correct": false
+      },
+      {
+        "text": "perch\u00e8 aumenta le prestazioni del sistema diminuendo gli accessi in lettura e scrittura alla periferica",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Nei sistemi multimediali, in quali casi si verifica un \"buffer underrun\"?",
+    "answers": [
+      {
+        "text": "quando il sistema operativo rende disponibili i dati a un decoder multimediale troppo velocemente",
+        "correct": false
+      },
+      {
+        "text": "quando un decoder multimediale non \u00e8 sincronizzato con il resto del sistema operativo",
+        "correct": false
+      },
+      {
+        "text": "quando il sistema operativo rende disponibili dati a un decoder multimediale troppo lentamente",
+        "correct": true
+      },
+      {
+        "text": "quando non \u00e8 possibile riempire completamente il buffer di un decoder multimediale",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che funzione svolge la MMU?",
+    "answers": [
+      {
+        "text": "convertire pagine di memoria virtuale in frame di memoria fisica",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia delle pagine allocate nella memoria virtuale",
+        "correct": false
+      },
+      {
+        "text": "gestire i page fault generati dalla CPU",
+        "correct": false
+      },
+      {
+        "text": "convertire indirizzi di memoria virtuale in indirizzi fisici",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende con il termine \"spazio di indirizzamento\"?",
+    "answers": [
+      {
+        "text": "il quantitativo di memoria utilizzato da un processo",
+        "correct": false
+      },
+      {
+        "text": "la somma della dimensione delle pagine di memoria utilizzate da un processo",
+        "correct": false
+      },
+      {
+        "text": "la memoria totale indirizzabile tramite il bus indirizzi",
+        "correct": true
+      },
+      {
+        "text": "la dimensione di un segmento di memoria",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In una architettura cloud, il livello SaaS si occupa di:",
+    "answers": [
+      {
+        "text": "virtualizzare delle applicazioni in rete",
+        "correct": true
+      },
+      {
+        "text": "fornire uno spazio di archiviazione online",
+        "correct": false
+      },
+      {
+        "text": "virtualizzare un ambiente di sviluppo per applicazioni distribuite",
+        "correct": false
+      },
+      {
+        "text": "virtualizzare un sistema di distribuzione dati",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa \u00e8 un \"cloud privato\"?",
+    "answers": [
+      {
+        "text": "un sistema cloud interno a un server",
+        "correct": false
+      },
+      {
+        "text": "un sistema in cui ogni utente \u00e8 isolato dagli altri",
+        "correct": false
+      },
+      {
+        "text": "un sistema cloud non disponibile all'esterno",
+        "correct": true
+      },
+      {
+        "text": "un sistema cloud utilizzabile solo pagando un abbonamento",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In cosa consiste il fenomeno della \"priority inversion\"?",
+    "answers": [
+      {
+        "text": "si verifica quando un processo a bassa priorit\u00e0 tiene costantemente bloccato un processo con una priorit\u00e0 maggiore",
+        "correct": true
+      },
+      {
+        "text": "si verifica quando un processo fa molto uso della CPU e viene penalizzato dallo scheduler",
+        "correct": false
+      },
+      {
+        "text": "si verifica quando la priorit\u00e0 espressa in forma numerica di un processo cambia segno (viene invertita)",
+        "correct": false
+      },
+      {
+        "text": "si verifica quando un processo fa molto uso di I/O e viene penalizzato dallo scheduler",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Qual \u00e8 l'obiettivo della politica di allocazione della memoria \"next fit\"?",
+    "answers": [
+      {
+        "text": "massimizzare la memoria contigua disponibile",
+        "correct": false
+      },
+      {
+        "text": "minimizzare la frammentazione esterna",
+        "correct": true
+      },
+      {
+        "text": "minimizzare il tempo di allocazione",
+        "correct": false
+      },
+      {
+        "text": "minimizzare la frammentazione interna",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In un sistema interattivo con priorit\u00e0, quali sono i processi a cui viene data precedenza?",
+    "answers": [
+      {
+        "text": "a quelli che devono gestire gli interrupt",
+        "correct": false
+      },
+      {
+        "text": "quelli in stato di ready",
+        "correct": false
+      },
+      {
+        "text": "quelli CPU-bound",
+        "correct": false
+      },
+      {
+        "text": "quelli I/O-bound",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende per \"starvation\"?",
+    "answers": [
+      {
+        "text": "quando un processo utilizza una risorsa per periodo di tempo lungo e indefinito",
+        "correct": false
+      },
+      {
+        "text": "quando il sistema esaurisce la memoria",
+        "correct": false
+      },
+      {
+        "text": "quando un job effettua una richiesta di risorse superiore a quelle disponibili",
+        "correct": false
+      },
+      {
+        "text": "quando un processo non riesce mai a ottenere la risorsa che necessita",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In un sistema LVM, i Logical Volume (LV)",
+    "answers": [
+      {
+        "text": "vengono aggregati per creare un Volume Group (VG)",
+        "correct": false
+      },
+      {
+        "text": "ospitano un file system",
+        "correct": true
+      },
+      {
+        "text": "rappresentano la virtualizzazione di un disco fisico",
+        "correct": false
+      },
+      {
+        "text": "ospitano un Phisical Volume (PV)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Come si stima la dimensione ottimale di un blocco su disco?",
+    "answers": [
+      {
+        "text": "\u00e8 la dimensione che ottimizza lo spazio sprecato degli i-node",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 il miglior compromesso tra frammentazione esterna e buffer d'accesso",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 la dimensione che ottimizza sia la frammentazione interna che il tempo di accesso",
+        "correct": true
+      },
+      {
+        "text": "\u00e8 la dimensione che ottimizza il tempo di accesso alla periferica",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa comporta il fenomeno della \"frammentazione esterna\" della memoria?",
+    "answers": [
+      {
+        "text": "che lo spazio di indirizzamento \u00e8 suddiviso in duo o pi\u00f9 parti",
+        "correct": false
+      },
+      {
+        "text": "che non \u00e8 possibile liberare la memoria occupata da uno o pi\u00f9 processi",
+        "correct": false
+      },
+      {
+        "text": "che non \u00e8 possibile allocare delle memoria effettivamente libera",
+        "correct": true
+      },
+      {
+        "text": "che viene sprecato dello spazio attraverso l'allocazione della memoria in frammenti",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In quale caso un processo pu\u00f2 trovarsi nello stato di bloccato?",
+    "answers": [
+      {
+        "text": "non ci si trova mai a meno che non sia coinvolto in un deadblock",
+        "correct": false
+      },
+      {
+        "text": "dopo la chiamata ad una system call",
+        "correct": true
+      },
+      {
+        "text": "dopo che ha ricevuto un interrupt",
+        "correct": false
+      },
+      {
+        "text": "alla fine del suo burst di CPU",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A cosa serve un device driver?",
+    "answers": [
+      {
+        "text": "permette di utilizzare una classe di dispositivi simili tra loro",
+        "correct": false
+      },
+      {
+        "text": "permette a un dispositivo di innescare la routine di risposta interrupt che server a gestirlo",
+        "correct": true
+      },
+      {
+        "text": "permette di utilizzare qualunque tipo di dispositivo se opportunamente configurato",
+        "correct": false
+      },
+      {
+        "text": "permette a un dispositivo di accedere al bus di comunicazione",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Come \u00e8 possibile ripristinare un sistema quando si verifica un deadlock?",
+    "answers": [
+      {
+        "text": "eliminando dei processi",
+        "correct": true
+      },
+      {
+        "text": "eliminando delle risorse",
+        "correct": false
+      },
+      {
+        "text": "facendo uso dell'algoritmo del banchiere",
+        "correct": false
+      },
+      {
+        "text": "agendo sullo scheduler",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende con il termine \"mutex\"?",
+    "answers": [
+      {
+        "text": "un modulo di sistema per gestire i deadlock",
+        "correct": false
+      },
+      {
+        "text": "un modulo di sistema per la gestione della mutua esclusione",
+        "correct": false
+      },
+      {
+        "text": "un semaforo binario",
+        "correct": true
+      },
+      {
+        "text": "un semafori sincronizzato",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In cosa consiste il sistema di journaling di un file system?",
+    "answers": [
+      {
+        "text": "tenere traccia delle operazioni eseguite per evitare inconsistenza",
+        "correct": true
+      },
+      {
+        "text": "tenere traccia delle operazioni dell'utente per ragioni di sicurezza",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia dei file pi\u00f9 frequentemente acceduti per ottimizzare le prestazioni",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia delle tabelle di allocazione dei blocchi liberi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende con il termine \"interrupt preciso\"?",
+    "answers": [
+      {
+        "text": "a un interrupt di cui si sanno con precisione tutte le informazioni",
+        "correct": false
+      },
+      {
+        "text": "un interrupt che lascia la CPU in uno stato ben determinato",
+        "correct": true
+      },
+      {
+        "text": "un interrupt che avviene in un ben preciso istante temporale",
+        "correct": false
+      },
+      {
+        "text": "un interrupt che si verifica allo scadere di una deadline in un sistema real-time",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intente con il termine \"working set di un processo\" ?",
+    "answers": [
+      {
+        "text": "sono le pagine in memoria necessarie per la sua esecuzione",
+        "correct": false
+      },
+      {
+        "text": "sono le pagine che identificano il suo spazio di indirizzamento",
+        "correct": false
+      },
+      {
+        "text": "sono le pagine che il processo sta utilizzando in un dato istante",
+        "correct": true
+      },
+      {
+        "text": "sono le pagine in memoria a seguito di un page fault",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Nell'implementazione del file system di Unix (UFS), cos'\u00e8 un I-node?",
+    "answers": [
+      {
+        "text": "\u00e8 una struttura dati usata per organizzare i blocchi allocati sul disco",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 una struttura dati usata per memorizzare un file multimediale insieme a P-node e B-node",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 una struttura dati usata per organizzare le informazioni riguardanti un file",
+        "correct": true
+      },
+      {
+        "text": "\u00e8 una struttura dati che ospita il contenuto di un file",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In generale, qual'\u00e8 il compito di un sistema operativo?",
+    "answers": [
+      {
+        "text": "permettere al software applicativo di accedere all'hardware",
+        "correct": true
+      },
+      {
+        "text": "permettere a una serie di applicazioni di condividere la memoria",
+        "correct": false
+      },
+      {
+        "text": "permettere all'hardware di accedere alle periferiche del sistema",
+        "correct": false
+      },
+      {
+        "text": "permettere a una serie di applicazioni di condividere la CPU",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende per \"starvation\"?",
+    "answers": [
+      {
+        "text": "quando un job effettua una richiesta di risorse superiore a quelle disponibili",
+        "correct": false
+      },
+      {
+        "text": "quando un processo ha utilizzato tutto il suo working set",
+        "correct": false
+      },
+      {
+        "text": "quando un processo rimane in attesa di una risorsa per un periodo di tempo lungo e indefinito",
+        "correct": true
+      },
+      {
+        "text": "quando il sistema esaurisce la memoria",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende con \"Rate Monotonic Scheduling\" ?",
+    "answers": [
+      {
+        "text": "\u00e8 un algoritmo per la schedulazione di risorse in streaming",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 un algoritmo per la schedulazione di processi multimediali",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 un algoritmo che massimizza l'uso della CPU in caso di processi multimediali",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 un algoritmo per la schedulazione di processi periodici",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende con il termine \"sistema batch\"?",
+    "answers": [
+      {
+        "text": "un sistema di elaborazione che prevede prelazione tra i thread",
+        "correct": false
+      },
+      {
+        "text": "un sistema di elaborazione in cui i job vengono caricati in memoria a gruppi (batch) e poi eseguiti sequenzialmente",
+        "correct": true
+      },
+      {
+        "text": "un sistema di elaborazione che fa uso di uno scheduler FIFO",
+        "correct": false
+      },
+      {
+        "text": "un sistema di elaborazione che veniva utilizzato per l'interpretazione dei file .BAT (batch) di MS-DOS",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa vuol dire \"fare lo snapshot\" di un sistema LVM?",
+    "answers": [
+      {
+        "text": "effettuare la copia di un volume per consentire la sostituzione di un dispositivo fisico",
+        "correct": false
+      },
+      {
+        "text": "effettuare la copia di un volume in un dato istante al fine di ottenere un backup",
+        "correct": true
+      },
+      {
+        "text": "effettuare la copia di un volume per migliorare le prestazioni",
+        "correct": false
+      },
+      {
+        "text": "effettuare una copia delle sole strutture dati per migliorare la consistenza delle informazioni",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In quale dei seguenti casi pu\u00f2 terminare un processo?",
+    "answers": [
+      {
+        "text": "sempre per propria volont\u00e0",
+        "correct": false
+      },
+      {
+        "text": "con la terminazione del suo quanto di tempo",
+        "correct": false
+      },
+      {
+        "text": "a causa di un errore al suo interno",
+        "correct": true
+      },
+      {
+        "text": "quando si verifica uno swap-out",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Come \u00e8 possibile eliminare la condizione di attesa circolare nei deadlock?",
+    "answers": [
+      {
+        "text": "assegnando tutte le risorse con un'operazione atomica",
+        "correct": false
+      },
+      {
+        "text": "imponendo un ordine globale con cui richiedere le risorse",
+        "correct": true
+      },
+      {
+        "text": "facendo uso dell'algoritmo del banchiere",
+        "correct": false
+      },
+      {
+        "text": "non pu\u00f2 essere eliminata ma solo identificata tramite l'algoritmo di Dijkstra",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Perch\u00e9 sono state introdotte le tabelle delle pagine multilivello?",
+    "answers": [
+      {
+        "text": "Per diminuire il tempo di accesso alla memoria virtuale.",
+        "correct": false
+      },
+      {
+        "text": "Per poter aumentare la dimensione delle pagine di memoria.",
+        "correct": false
+      },
+      {
+        "text": "Per far fronte all\u2019aumento dello spazio di indirizzamento della CPU.",
+        "correct": true
+      },
+      {
+        "text": "Per definire una struttura dati unica e non pi\u00f9 una per processo.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Di cosa fa uso l\u2019algoritmo NRU (Not Recently Used) per l\u2019identificazione della pagina vittima?",
+    "answers": [
+      {
+        "text": "Fa uso del concetto di aging (invecchiamento).",
+        "correct": false
+      },
+      {
+        "text": "Mantiene le pagine in ordine temporale di utilizzo.",
+        "correct": false
+      },
+      {
+        "text": "Sceglie una pagina a caso tra quello non appartenenti al working set.",
+        "correct": false
+      },
+      {
+        "text": "Classifica le pagine in quattro categorie.",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In quale modo un sistema LVM (Logical Volume Manager) pu\u00f2 aumentare l\u2019affidabilit\u00e0 dei dischi?",
+    "answers": [
+      {
+        "text": "Attraverso il meccanismo dello striping.",
+        "correct": false
+      },
+      {
+        "text": "Usando un controller RAID.",
+        "correct": false
+      },
+      {
+        "text": "Associando la stessa Logical Extent a due o pi\u00f9 Physical Extent.",
+        "correct": true
+      },
+      {
+        "text": "Facendo uso di snapshot frequenti.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Parlando di deadlock, com\u2019\u00e8 possibile eliminare la condizione di \u201chold and wait\u201d?",
+    "answers": [
+      {
+        "text": "Obbligando un processo a richiedere tutte le risorse in una sola volta.",
+        "correct": true
+      },
+      {
+        "text": "Facendo uso di un monitor.",
+        "correct": false
+      },
+      {
+        "text": "Facendo uso di un semaforo.",
+        "correct": false
+      },
+      {
+        "text": "Obbligando il processo a richiedere le risorse in un ordine prefissato.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa implica un\u2019implementazione dei thread in spazio utente?",
+    "answers": [
+      {
+        "text": "Lo scheduler seleziona un processo da eseguire e poi un thread all\u2019interno di quest\u2019ultimo.",
+        "correct": false
+      },
+      {
+        "text": "Lo scheduler seleziona un processo da eseguire e il processo gestisce i suoi thread.",
+        "correct": true
+      },
+      {
+        "text": "Un processo seleziona qual \u00e8 il prossimo thread da eseguire nel sistema.",
+        "correct": false
+      },
+      {
+        "text": "Lo scheduler seleziona un thread da eseguire",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Qual \u00e8 l\u2019obbiettivo di un file system specializzato in contenuti multimediali?",
+    "answers": [
+      {
+        "text": "Permettere di passare facilmente da un i-frame all\u2019altro.",
+        "correct": false
+      },
+      {
+        "text": "Recuperare dati nel caso di frame persi.",
+        "correct": false
+      },
+      {
+        "text": "Permettere di estrarre i dati dal disco con un tempo uniforme.",
+        "correct": true
+      },
+      {
+        "text": "Ridurre la frammentazione interna.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Quale delle seguenti transizioni tra gli stati di un processo NON \u00e8 valida?",
+    "answers": [
+      {
+        "text": "Da WAIT a READY.",
+        "correct": false
+      },
+      {
+        "text": "Da RUNNING a READY.",
+        "correct": false
+      },
+      {
+        "text": "Da READY a RUNNING.",
+        "correct": false
+      },
+      {
+        "text": "Da WAIT a RUNNING.",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Parlando di cloud, cosa si intende con il termine \u201celasticit\u00e0\u201d?",
+    "answers": [
+      {
+        "text": "La possibilit\u00e0 del sistema di adattarsi a carichi di lavoro crescenti.",
+        "correct": false
+      },
+      {
+        "text": "La possibilit\u00e0 del sistema di operare su piattaforme diverse.",
+        "correct": false
+      },
+      {
+        "text": "La capacit\u00e0 del sistema di aumentare la disponibilit\u00e0 di risorse facilmente e in tempi brevi.",
+        "correct": true
+      },
+      {
+        "text": "La capacit\u00e0 del sistema di continuare a funzionare anche in presenza di guasti hardware",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Secondo la classificazione cloud, come \u00e8 classificato un host fisico a cui si accede in remoto",
+    "answers": [
+      {
+        "text": "Non \u00e8 un servizio cloud.",
+        "correct": true
+      },
+      {
+        "text": "IaaS.",
+        "correct": false
+      },
+      {
+        "text": "PaaS.",
+        "correct": false
+      },
+      {
+        "text": "SaaS.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Quale vantaggio comporta l\u2019allocazione contigua dei file in un file system?",
+    "answers": [
+      {
+        "text": "Aumenta la capacit\u00e0 totale del disco.",
+        "correct": false
+      },
+      {
+        "text": "Diminuisce la possibilit\u00e0 di corruzione dati in caso di crash.",
+        "correct": false
+      },
+      {
+        "text": "Aumenta le prestazioni nel caso di accesso casuale.",
+        "correct": true
+      },
+      {
+        "text": "Elimina il problema della frammentazione interna",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che svantaggio comporta l\u2019uso di I/O programmato?",
+    "answers": [
+      {
+        "text": "Il busy waiting del bus dati.",
+        "correct": false
+      },
+      {
+        "text": "Il busy waiting della CPU.",
+        "correct": true
+      },
+      {
+        "text": "Richiede di gestire la temporizzazione degli interrupt.",
+        "correct": false
+      },
+      {
+        "text": "Richiede di gestire la mutua esclusione sul buffer della periferica.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Parlando di sistemi multimediali, quali sono i vantaggi di EDF rispetto a RMS?",
+    "answers": [
+      {
+        "text": "Permette di rispettare le deadline aumentando il tasso di utilizzo del sistema.",
+        "correct": true
+      },
+      {
+        "text": "Permette di rispettare le deadline di processi con periodi pi\u00f9 brevi.",
+        "correct": false
+      },
+      {
+        "text": "Permette di rispettare le deadline anche quando la condizione di schedulabilit\u00e0 non viene soddisfatta.",
+        "correct": false
+      },
+      {
+        "text": "Permette di rispettare le deadline di processi con burst pi\u00f9 lunghi.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cos\u2019\u00e8 un interrupt?",
+    "answers": [
+      {
+        "text": "Un segnale asincrono proveniente dalla CPU.",
+        "correct": false
+      },
+      {
+        "text": "Un segnale asincrono proveniente da una periferica.",
+        "correct": true
+      },
+      {
+        "text": "Un segnale sincrono risultato di una istruzione di CPU.",
+        "correct": false
+      },
+      {
+        "text": "Un segnale sincrono proveniente dall\u2019interrupt controller",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Da che cosa \u00e8 determinata la dimensione massima di un file su un file system FAT?",
+    "answers": [
+      {
+        "text": "Pu\u00f2 occupare tutto il disco in quanto \u00e8 l\u2019equivalente di una lista concatenata.",
+        "correct": false
+      },
+      {
+        "text": "Solo dal numero di recordi disponibili.",
+        "correct": false
+      },
+      {
+        "text": "E\u2019 sempre di 2 GB.",
+        "correct": false
+      },
+      {
+        "text": "Dal numero di record disponibili e dalla dimensione del data block.",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Che cosa vuol dire fare il controllo di integrit\u00e0 di un file system?",
+    "answers": [
+      {
+        "text": "Verificare che i metadati di ogni singolo file siano consistenti.",
+        "correct": false
+      },
+      {
+        "text": "Verificare che il contenuto del datablock sia consistente.",
+        "correct": false
+      },
+      {
+        "text": "Verificare che i dati nell\u2019area di log (journal) siano consistenti.",
+        "correct": false
+      },
+      {
+        "text": "Verificare che i metadati del file system siano consistenti.",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Quale elemento genera la trap di chiamata di una system call?",
+    "answers": [
+      {
+        "text": "lo stub",
+        "correct": true
+      },
+      {
+        "text": "la CPU",
+        "correct": false
+      },
+      {
+        "text": "il codice utente",
+        "correct": false
+      },
+      {
+        "text": "la MMU",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Quando il rimpiazzamento delle pagine viene fatto con una politica globale \u2026",
+    "answers": [
+      {
+        "text": "il working set dei processi si riduce",
+        "correct": false
+      },
+      {
+        "text": "il working set del processo rimane invariato e si riduce il valore di PFF",
+        "correct": false
+      },
+      {
+        "text": "il working set del processo si allarga",
+        "correct": true
+      },
+      {
+        "text": "il working set di tutti i processi si allargano",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Quali di questi algoritmi implementano un sistema di aging per le pagine?",
+    "answers": [
+      {
+        "text": "NRU, NFU",
+        "correct": true
+      },
+      {
+        "text": "NRU, NFU e seconda chance",
+        "correct": false
+      },
+      {
+        "text": "solo NRU",
+        "correct": false
+      },
+      {
+        "text": "solo NFU",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In un sistema di I/O che usa DMA\u2026",
+    "answers": [
+      {
+        "text": "il DMA virtualizza l\u2019interfaccia per la periferica",
+        "correct": false
+      },
+      {
+        "text": "il sistema I/O non fa uso di interrupt",
+        "correct": false
+      },
+      {
+        "text": "il DMA controller trasferisce i dati da e verso la memoria",
+        "correct": false
+      },
+      {
+        "text": "la periferica trasferisce i dati da e verso la memoria",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Nel file system FAT-16 e FAT-32, cosa indicano i numeri 16 e 32?",
+    "answers": [
+      {
+        "text": "la versione del file system",
+        "correct": false
+      },
+      {
+        "text": "la dimensione massima del file",
+        "correct": false
+      },
+      {
+        "text": "la dimensione del data block",
+        "correct": false
+      },
+      {
+        "text": "la dimensioni delle entry nella tabella di allocazione",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "A cosa serve un sistema di schedulazione a code multiple?",
+    "answers": [
+      {
+        "text": "a prevenire i deadlock",
+        "correct": false
+      },
+      {
+        "text": "a evitare il trashing",
+        "correct": false
+      },
+      {
+        "text": "a eliminare la starvation",
+        "correct": false
+      },
+      {
+        "text": "a implementare un sistema con priorit\u00e0",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Un device controller\u2026",
+    "answers": [
+      {
+        "text": "gestisce l\u2019hardware delle periferiche",
+        "correct": true
+      },
+      {
+        "text": "\u00e8 un software installato sulla periferica",
+        "correct": false
+      },
+      {
+        "text": "fa parte dell\u2019hardware della periferica",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 un software installato nel sistema operativo",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Quale algoritmo riduce il numero di frammentazioni esterne ma non la loro dimensione?",
+    "answers": [
+      {
+        "text": "Next Fit",
+        "correct": false
+      },
+      {
+        "text": "Worst Fit",
+        "correct": true
+      },
+      {
+        "text": "Best fit",
+        "correct": false
+      },
+      {
+        "text": "Firt Fit",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Il passaggio di un processo da bloccato a in esecuzione (da waiting a running) avviene\u2026",
+    "answers": [
+      {
+        "text": "mai",
+        "correct": true
+      },
+      {
+        "text": "alla fine di una operazione di I/O",
+        "correct": false
+      },
+      {
+        "text": "tramite una system call",
+        "correct": false
+      },
+      {
+        "text": "dopo un interrupt",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "La regione critica di un processo \u00e8:",
+    "answers": [
+      {
+        "text": "le istruzioni incluse ta la down e la up di un semaforo",
+        "correct": false
+      },
+      {
+        "text": "la parte di codice in cui si accede a delle variabili globali",
+        "correct": false
+      },
+      {
+        "text": "una serie di istruzioni consecutive",
+        "correct": false
+      },
+      {
+        "text": "un insieme di istruzioni anche se non consecutive",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In un sistema che usa LVM, lo snapshot\u2026",
+    "answers": [
+      {
+        "text": "viene aggiornato in continuazione, indipendentemente dal backup",
+        "correct": false
+      },
+      {
+        "text": "garantisce la consistenza dei dati in caso di crash",
+        "correct": false
+      },
+      {
+        "text": "viene eliminato una volta terminato il backup",
+        "correct": true
+      },
+      {
+        "text": "contiene solo informazioni idempotenti",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Nell\u2019architettura cloud, il livello IaaS\u2026",
+    "answers": [
+      {
+        "text": "virtualizza delle periferiche, inclusa la CPU",
+        "correct": true
+      },
+      {
+        "text": "\u00e8 l\u2019unico livello opzionale",
+        "correct": false
+      },
+      {
+        "text": "virtualizza lo storage e la rete",
+        "correct": false
+      },
+      {
+        "text": "mette a disposizione dei docker",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "L\u2019algoritmo RMS associa priorit\u00e0 ai processi in base a:",
+    "answers": [
+      {
+        "text": "il rapporto tra burst e periodo",
+        "correct": false
+      },
+      {
+        "text": "la lunghezza del loro periodo",
+        "correct": true
+      },
+      {
+        "text": "la lunghezza del loro burst",
+        "correct": false
+      },
+      {
+        "text": "il rapporto tra periodo e burst",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Un page fault \u00e8:",
+    "answers": [
+      {
+        "text": "una trap",
+        "correct": true
+      },
+      {
+        "text": "un accesso illegale in memoria",
+        "correct": false
+      },
+      {
+        "text": "una condizione di errore",
+        "correct": false
+      },
+      {
+        "text": "sempre generato da una system call",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che vantaggio ha un file system ad allocazione contigua rispetto a uno che usa liste continue?",
+    "answers": [
+      {
+        "text": "\u00e8 pi\u00f9 veloce per l\u2019accesso sequenziale",
+        "correct": true
+      },
+      {
+        "text": "\u00e8 pi\u00f9 facile fare la mappatura dei file in memoria",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 pi\u00f9 veloce per l\u2019accesso casuale",
+        "correct": false
+      },
+      {
+        "text": "genera meno frammentazione esterna",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Un interrupt preciso \u00e8:",
+    "answers": [
+      {
+        "text": "un fenomeno che si verifica nelle architetture multiprocessore",
+        "correct": false
+      },
+      {
+        "text": "una richiesta gestita dall\u2019Interrupt Controller",
+        "correct": false
+      },
+      {
+        "text": "necessario per poter gestire il segnale",
+        "correct": true
+      },
+      {
+        "text": "opzionale per poter gestire il segnale",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Il fenomeno dell\u2019attesa circolare nei deadlock riguarda\u2026",
+    "answers": [
+      {
+        "text": "tutti i processi in attesa di risorse",
+        "correct": false
+      },
+      {
+        "text": "tutti i processi del sistema",
+        "correct": false
+      },
+      {
+        "text": "solo i processi in deadlock",
+        "correct": true
+      },
+      {
+        "text": "tutti i processi in stato bloccato",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In che modo \u00e8 possibile prevenire un deadlock?",
+    "answers": [
+      {
+        "text": "usando i semafori",
+        "correct": false
+      },
+      {
+        "text": "aumentando le risorse",
+        "correct": false
+      },
+      {
+        "text": "usando l\u2019algoritmo di Djkstra",
+        "correct": false
+      },
+      {
+        "text": "agendo sulle condizioni di Coffman",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "La mappatura dell\u2019I/O in memoria riguarda\u2026",
+    "answers": [
+      {
+        "text": "dipende dallo spazio di indirizzamento",
+        "correct": false
+      },
+      {
+        "text": "solo il buffer",
+        "correct": false
+      },
+      {
+        "text": "solo il registro di controllo",
+        "correct": false
+      },
+      {
+        "text": "sia il buffer sia i registri di controllo",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "A che cosa serve una system call?",
+    "answers": [
+      {
+        "text": "a generare una trap",
+        "correct": false
+      },
+      {
+        "text": "a generare un interrupt",
+        "correct": false
+      },
+      {
+        "text": "a schedulare un nuovo processo",
+        "correct": false
+      },
+      {
+        "text": "ad accedere a strutture dati all\u2019interno del kernel",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Qual \u00e8 la funzione svolta da un DMA controller?",
+    "answers": [
+      {
+        "text": "trasferisce i dati dal buffer di una periferica alla memoria centrale",
+        "correct": false
+      },
+      {
+        "text": "riceve le richieste di I/O provenienti dalla CPU e le inoltra al controller della periferica",
+        "correct": true
+      },
+      {
+        "text": "riceve gli interrupt provenienti dalle periferiche e li gestisce",
+        "correct": false
+      },
+      {
+        "text": "permette al controller di una periferica di usare il bus dati",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Chi si occupa di generare la trap di page fault?",
+    "answers": [
+      {
+        "text": "il processo",
+        "correct": false
+      },
+      {
+        "text": "la MMU",
+        "correct": true
+      },
+      {
+        "text": "la CPU",
+        "correct": false
+      },
+      {
+        "text": "la TLB",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa comporta il fenomeno della frammentazione interna della memoria?",
+    "answers": [
+      {
+        "text": "che viene sprecato dello spazio attraverso l\u2019allocazione della memoria in pagine",
+        "correct": true
+      },
+      {
+        "text": "che non \u00e8 possibile librerare la memoria occupata da uno o pi\u00f9 processi",
+        "correct": false
+      },
+      {
+        "text": "che lo spazio di indirizzamento \u00e8 suddiviso in due o pi\u00f9 parti",
+        "correct": false
+      },
+      {
+        "text": "che non \u00e8 possibile allocare della memoria effettivamente libera",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cos'\u00e8 un \u201ccloud pubblico\u201d?",
+    "answers": [
+      {
+        "text": "un sistema cloud accessibile tramite internet",
+        "correct": true
+      },
+      {
+        "text": "un sistema cloud che offre un servizio di pubblica utilit\u00e0",
+        "correct": false
+      },
+      {
+        "text": "un sistema cloud in cui gli utenti condividono delle risorse",
+        "correct": false
+      },
+      {
+        "text": "un sistema cloud utilizzabile in forma gratuita",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In un file system unix, come sono implementate le directory?",
+    "answers": [
+      {
+        "text": "con una sequenza di data block",
+        "correct": false
+      },
+      {
+        "text": "con delle tabelle che associano il numero di i-node al data block che contiene i dati del file",
+        "correct": false
+      },
+      {
+        "text": "con un i-node",
+        "correct": false
+      },
+      {
+        "text": "con delle tabelle che associano il nome del file al numero di i-node",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Quando i thread sono implementati in modalit\u00e0 utente\u2026",
+    "answers": [
+      {
+        "text": "il kernel decide il prossimo thread da eseguire",
+        "correct": false
+      },
+      {
+        "text": "il kernel decide il prossimo processo da eseguire",
+        "correct": false
+      },
+      {
+        "text": "il dispatcher deve essere implementato dal processo",
+        "correct": true
+      },
+      {
+        "text": "ogni processo deve implementare un sistema di virtualizzazione",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che differenza c\u2019\u00e8 tra un sistema monolitico e uno a microkernel?",
+    "answers": [
+      {
+        "text": "il primo \u00e8 implementato con un\u2019unica unit\u00e0 software mentre il secondo da pi\u00f9 unit\u00e0 che collaborano tra loro",
+        "correct": true
+      },
+      {
+        "text": "il primo \u00e8 realizzato su una macchina fisica, il secondo \u00e8 virtualizzato",
+        "correct": false
+      },
+      {
+        "text": "il primo \u00e8 implementato con un\u2019unica unit\u00e0 software mentre il secondo da pi\u00f9 unit\u00e0 che devono essere eseguite in rete",
+        "correct": false
+      },
+      {
+        "text": "non ci sono differenze",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che caratteristica ha l\u2019algoritmo LRU?",
+    "answers": [
+      {
+        "text": "non \u00e8 possibile implementarlo",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 una semplificazione dell\u2019algoritmo WS-Clock",
+        "correct": false
+      },
+      {
+        "text": "si pu\u00f2 implementare, ma con pessime prestazioni",
+        "correct": true
+      },
+      {
+        "text": "soffre dell\u2019anomaliza di Belady",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende per \"starvation\"?",
+    "answers": [
+      {
+        "text": "quando una risorsa non viene mai data a disposizione di un processo",
+        "correct": true
+      },
+      {
+        "text": "quando il sistema esaurisce la memoria",
+        "correct": false
+      },
+      {
+        "text": "quando un job effettua una richiesta di risorse superiore a quelle disponibili",
+        "correct": false
+      },
+      {
+        "text": "quando una risorsa rimane in attesa di essere allocata per un periodo di tempo lungo e indefinito",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Il dispatcher si occupa di:",
+    "answers": [
+      {
+        "text": "non \u00e8 correlato alla gestione dei processi",
+        "correct": false
+      },
+      {
+        "text": "eliminare dalla memoria un processo terminato",
+        "correct": false
+      },
+      {
+        "text": "selezionare il prossimo processo da eseguire",
+        "correct": false
+      },
+      {
+        "text": "cambiare il processo in esecuzione",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "A che cosa serve un sistema LVM?",
+    "answers": [
+      {
+        "text": "a virtualizzare un disco",
+        "correct": false
+      },
+      {
+        "text": "a virtualizzare lo spazio di storage",
+        "correct": true
+      },
+      {
+        "text": "a simulare un raid",
+        "correct": false
+      },
+      {
+        "text": "a simulare uno storage via rete",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Parlando di deadlock, che cosa si intende per \u201chold and wait\u201d?",
+    "answers": [
+      {
+        "text": "che un processo che detiene delle risorse ha la facolt\u00e0 di richederne altre",
+        "correct": false
+      },
+      {
+        "text": "che un processo che detiene delle risorse mette tutti gli altri processi in stato di wait",
+        "correct": false
+      },
+      {
+        "text": "che un processo che detiene delle risorse deve aspettare per richiederne delle altre",
+        "correct": true
+      },
+      {
+        "text": "che un processo che detiene delle risorse pu\u00f2 sospendersi per un tempo indefinito",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In un'architettura cloud, il livello PaaS si occupa di:",
+    "answers": [
+      {
+        "text": "fornire un sistema operativo su una macchina virtuale",
+        "correct": false
+      },
+      {
+        "text": "fornire un sistema di sviluppo software online",
+        "correct": true
+      },
+      {
+        "text": "virtualizzare un ambiente per l\u2019esecuzione di programmi in rete",
+        "correct": false
+      },
+      {
+        "text": "virtualizzare un sistema di processi concorrenti distribuito",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In quali modi un sistema di I/O pu\u00f2 essere mappato in memoria?",
+    "answers": [
+      {
+        "text": "nella cache",
+        "correct": false
+      },
+      {
+        "text": "nello spazio delle porte",
+        "correct": false
+      },
+      {
+        "text": "nello spazio di indirizzamento del kernel",
+        "correct": false
+      },
+      {
+        "text": "nello spazio di indirizzamento del processo e in uno spazio di indirizzamento separato",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "In che cosa consiste il sistema di journaling di un file system?",
+    "answers": [
+      {
+        "text": "tenere traccia delle modifiche al file system per rendere pi\u00f9 veloce l\u2019accesso",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia dei file pi\u00f9 frequentemente acceduti per ottimizzare le prestazioni",
+        "correct": false
+      },
+      {
+        "text": "tenera traccia delle operazioni dell\u2019utente per ragioni di sicurezza",
+        "correct": false
+      },
+      {
+        "text": "tenere traccia delle operazioni sul disco per favorire la risoluzione delle inconsistenze",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Che cosa vuol dire fare rollback per uscire da un deadlock?",
+    "answers": [
+      {
+        "text": "imporre a uno o pi\u00f9 processi di rilasciare tutte le risorse allocate",
+        "correct": false
+      },
+      {
+        "text": "imporre alle risorse di tornare nel loro stato iniziale",
+        "correct": false
+      },
+      {
+        "text": "ripristinare uno stato sicuro precedente a deadlock",
+        "correct": false
+      },
+      {
+        "text": "ripristinare un checkpoint precedente al deadlock",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Qual \u00e8 l\u2019obiettivo della politica di allocazione della memoria \u201cnext fit\u201d?",
+    "answers": [
+      {
+        "text": "minimizzare il tempo di allocazione",
+        "correct": false
+      },
+      {
+        "text": "minimizzare la frammentazione interna",
+        "correct": false
+      },
+      {
+        "text": "minimizzare la frammentazione esterna",
+        "correct": true
+      },
+      {
+        "text": "massimizzare la memoria contigua disponibile",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende con il termine TSL?",
+    "answers": [
+      {
+        "text": "\u00e8 una microistruzione della CPU usata per implementare un semaforo",
+        "correct": true
+      },
+      {
+        "text": "\u00e8 una microistruzione della CPU usata per implementare un monitor",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 una istruzione di un linguaggio usata per implementare un semaforo",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 una istruzione di un linguaggio usata per implementare un monitor",
+        "correct": false
+      }
+    ]
+  }
+]

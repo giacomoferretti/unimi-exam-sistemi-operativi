@@ -1,0 +1,559 @@
+[
+  {
+    "question": "Quali algoritmi possono essere utilizzati nei sistemi interattivi?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Alternanza stretta e problemi",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Condizioni di Coffman / Condizioni deadlock",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cosa significa disabilitare gli interrupt nella mutua esclusione?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo di Peterson",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "PCB",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Stati di un processo",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo della lotteria",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Obiettivi dei sistemi di scheduling (all systems)",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Obiettivi dei sistemi di scheduling (batch systems)",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "TSL",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Differenza tra scheduling fair shared e garantito",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Problema produttore e consumatore con sleep and wake up",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Quanti semafori ha bisogno il problema del produttore consuamtore?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Scheduling nei sistemi real time",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmi di scheduling dei sistemi batch",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos'è la race condition",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Funzionamento delle variabili di lock",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Funzionamento degli algoritmi di scheduling a code multiple",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Scheduling a priorità",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Differenza tra processo e thread",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Considerazioni sul quanto di tempo nello scheduling Round Robin",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos'è il problema del produttore consumatore",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Come sono implementati i thread e come vengono usati",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Che condizione viola l'alternanza stretta?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Differenza tra processo periodico e processo non periodico",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "4 condizioni che devono verificarsi perché sia buona una soluzione per la regione critica",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Scheduling a lotteria",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos'è un semaforo",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Processi CPU bound e I/O bound",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Come si può creare un processo",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Terminazione di un processo",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Disabilitazione degli interrupt. Disabilitare gli interrupt funziona sui sistemi multiprocessori?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Per passare dai differenti stati di un processo, quale struttura dati viene utilizzata dall'OS?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Implementazione dei processi",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Obiettivi dei sistemi di scheduling interattivi",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Categorie dei sistemi di scheduling",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Obiettivi dei sistemi di scheduling real time",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Page table invertite",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Virtual file system e V-Node",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmi per la frammentazione esterna",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos'è un i-node?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Come si determina la dimensione di una pagina?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "I/O mappato in memoria",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo del banchiere",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "RMS",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Buffer overrun e buffer underrun",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "LVM, funzionalità, differenze con i RAID",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "SaaS, IaaS, PaaS",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Elasticità vs scalabilità (cloud)",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "FAT",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "I/O programmato",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Se ho un sistema di i/o mappato in memoria, posso fare uso di i/o programmato?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Trashing",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Sistemi real time, condizione di schedulabilità (quando è valida), processi periodici e non periodici",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cosa succede all’interno del kernel quando chiamo una system call",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos’è una free list e problema nella gestione",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Codifica vs Compressione",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos’è una trap?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Swap di un processo",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "File ad allocazione contigua",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "GoP, derivazioni su scheduling e file system (Datablock > GoP; Datablock < GoP)",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo WSClock",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo dello struzzo, quando ha senso usarlo?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Pagine multilivello",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Interrupt preciso",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "EDS",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Perché si usano le page table invertite?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cosa succede all’interno del kernel quando arriva un interrupt?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "In quale contesti abbiamo parlato di frammentazione esterna?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "EDF",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "I/O tramite DMA",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo NRU",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo LRU",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Registro base e registro limite",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Stato sicuro",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Sistema multiprogrammato",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos’è un Monitor?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Resident monitor",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Come si può fare I/O",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Gerarchie di memoria",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Cos’è il dispatcher?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Journaled file system, dove si trovano i log",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Algoritmo di Dijkstra",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Politica di allocazione locale e globale",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Chi mi porta in stato di ready/waiting? e chi in blocked?",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Virtualizzazione dell'OS",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Consistenza del file system",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Perché non si usa LRU",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Anomalia di Belady e algoritmi stack (proprietà di inclusione)",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Backing Store",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Disk Caching",
+    "answer": "",
+    "tags": []
+  },
+
+  {
+    "question": "Quali Trap conosci?",
+    "answer": "",
+    "tags": []
+  }
+]
