@@ -1846,5 +1846,362 @@
         "correct": false
       }
     ]
+  },
+  {
+    "question": "Che caratteristica ha l\u2019algoritmo NFU (Not Frequently Used)?",
+    "answers": [
+      {
+        "text": "utilizza il valore di PFF (Page Fault Frequency)",
+        "correct": false
+      },
+      {
+        "text": "implementa un sistema di invecchiamento delle pagine",
+        "correct": true
+      },
+      {
+        "text": "implementa un sistema di eliminazione circolare, come il clock",
+        "correct": false
+      },
+      {
+        "text": "suddivide le pagine in quattro categorie",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cos\u2019\u00e8 il \u201csystem call handler\u201d?",
+    "answers": [
+      {
+        "text": "\u00e8 la parte di kernel che recupera il numero della system call e chiama la sua implementazione",
+        "correct": true
+      },
+      {
+        "text": "\u00e8 una tabella che associa ad ogni numero di system call la sua implementazione",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 la parte di kernel che implementa una specifica system call",
+        "correct": false
+      },
+      {
+        "text": "\u00e8 la parte di kernel che si occupa della gestione della trap di system call",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che tipo di algoritmo \u00e8 il guaranteed scheduling (scheduling garantito)?",
+    "answers": [
+      {
+        "text": "garantisce che non ci siano inversioni di priorit\u00e0 tra i processi",
+        "correct": false
+      },
+      {
+        "text": "distribuisce uniformemente le risorse tra i processi",
+        "correct": true
+      },
+      {
+        "text": "garantisce che non ci siano deadlock",
+        "correct": false
+      },
+      {
+        "text": "distribuisce uniformemente le risorse tra gli utenti",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A che cosa serve un device driver?",
+    "answers": [
+      {
+        "text": "permette a un dispositivo di innescare la routine di risposta interrupt che serve a gestirlo",
+        "correct": true
+      },
+      {
+        "text": "permette di utilizzare qualunque tipo di dispositivo se opportunamente configurato",
+        "correct": false
+      },
+      {
+        "text": "permette a un dispositivo di accedere al bus di comunicazione",
+        "correct": false
+      },
+      {
+        "text": "permette di utilizzare una classe di dispositivi simili tra loro",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Quando conviene passare da una tabella delle pagine convenzionale a una multilivello?",
+    "answers": [
+      {
+        "text": "all\u2019aumentare dello spazio di indirizzamento",
+        "correct": false
+      },
+      {
+        "text": "all\u2019aumentare della memoria fisica",
+        "correct": true
+      },
+      {
+        "text": "all\u2019aumentare del livello di astrazione della memoria",
+        "correct": false
+      },
+      {
+        "text": "all\u2019aumentare dei processi",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Un file system cno allocazione a liste collegate\u2026",
+    "answers": [
+      {
+        "text": "favorisce l\u2019accesso casuale ai dati",
+        "correct": false
+      },
+      {
+        "text": "elimina la frammentazione esterna",
+        "correct": true
+      },
+      {
+        "text": "elimina la frammentazione interna",
+        "correct": false
+      },
+      {
+        "text": "ottimizza l\u2019accesso alla periferica",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cos'\u00e8 un \u201ccloud ibrido\u201d?",
+    "answers": [
+      {
+        "text": "un sistema cloud in cui dati e software possono essere combinati insieme",
+        "correct": false
+      },
+      {
+        "text": "un sistema cloud in cui gli utenti condividono delle risorse",
+        "correct": false
+      },
+      {
+        "text": "un sistema cloud costituito da parti accessibili tramite Internet e parti interne all\u2019azienda",
+        "correct": true
+      },
+      {
+        "text": "un sistema cloud che include al suo interno dei sistemi tradizionali (non cloud)",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa comporta per la CPU che l\u2019I/O sia mappato anche in uno spazio di indirizzamento separato?",
+    "answers": [
+      {
+        "text": "deve supportare un bus indirizzi aggiuntivo",
+        "correct": false
+      },
+      {
+        "text": "deve riservare una zona di memoria centrale per la mappatura",
+        "correct": false
+      },
+      {
+        "text": "deve supportare dele microistruzioni specifiche",
+        "correct": true
+      },
+      {
+        "text": "nulla, perch\u00e9 lo gestisce la MMU",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "A cosa serve un hypervisor di tipo 2",
+    "answers": [
+      {
+        "text": "a virtualizzare delle funzionalit\u00e0 facendo eseguire codice al sistema operativo ospite",
+        "correct": true
+      },
+      {
+        "text": "a virtualizzare dell\u2019hardware anche senza un sistema operativo ospite",
+        "correct": false
+      },
+      {
+        "text": "a simulare un\u2019architettura software all\u2019interno di un sistema operativo ospite",
+        "correct": false
+      },
+      {
+        "text": "a simulare un processore diverso da quello presente nel sistema di calcolo",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Che cosa si intende con il termine \u201csistema multiprogrammato\u201d?",
+    "answers": [
+      {
+        "text": "un sistema in cui i processi sono schedulati in round-robin",
+        "correct": false
+      },
+      {
+        "text": "un sistema in cui ci sono pi\u00f9 processi in esecuzione contemporaneamente",
+        "correct": false
+      },
+      {
+        "text": "un sistema in cui ci sono processi che appartengono ad utenti diversi",
+        "correct": false
+      },
+      {
+        "text": "un sistema in cui sono presenti pi\u00f9 processi contemporaneamente in memoria",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Cosa vuol dire fare lo SWAP-OUT di un processo",
+    "answers": [
+      {
+        "text": "recuperare le sue strutture dati dal disco per rimetterlo in esecuzione",
+        "correct": false
+      },
+      {
+        "text": "spostare le sue strutture dati su disco per liberare spazio in memoria",
+        "correct": true
+      },
+      {
+        "text": "scambiare il suo working set con quello di un altro processo",
+        "correct": false
+      },
+      {
+        "text": "riportarlo fuori dallo spazio di swap perch\u00e9 \u00e8 arrivato un interrupt",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In un sistema LVM, che cosa si intende con \"striping\"",
+    "answers": [
+      {
+        "text": "allocare GE (Group Extent) adiacenti a dischi diversi per aumentare le prestazioni",
+        "correct": true
+      },
+      {
+        "text": "allocare DB (Data Block) adiacenti a dischi diversi per aumentare l\u2019affidabilit\u00e0",
+        "correct": false
+      },
+      {
+        "text": "associare la stessa GE (Group Extent) a pi\u00f9 di una PH (Physical Extent) per aumentare le prestazioni",
+        "correct": false
+      },
+      {
+        "text": "allocare LV (Logical Volume) adiacenti a dischi diversi per aumentare l\u2019affidabilit\u00e0",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "In che modo possono scambiarsi dati due thread?",
+    "answers": [
+      {
+        "text": "con il meccanismo del produttore-consumatore",
+        "correct": false
+      },
+      {
+        "text": "usando una system call",
+        "correct": false
+      },
+      {
+        "text": "con un sistema di messaggi",
+        "correct": false
+      },
+      {
+        "text": "attraverso una zona di memoria condivisa",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Come funziona l\u2019algoritmo di Dijkstra per i deadlock?",
+    "answers": [
+      {
+        "text": "determina se una risorsa deve essere prelazionata o meno",
+        "correct": false
+      },
+      {
+        "text": "verifica la presenza di cicli nel grafo che rappresenta il sistema",
+        "correct": true
+      },
+      {
+        "text": "richiede che lo stato del sistema rimanga sicuro",
+        "correct": false
+      },
+      {
+        "text": "determina se un processo deve essere eliminato o meno",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Nei sistemi multimediali, in quali casi si verifica un \u201cbuffer overrun\u201d?",
+    "answers": [
+      {
+        "text": "quando un decoder multimediale legge i dati dal sistema operativo troppo lentamente",
+        "correct": false
+      },
+      {
+        "text": "quando un decoder multimediale legge i dati dal sistema operativo troppo velocemente",
+        "correct": true
+      },
+      {
+        "text": "quando non \u00e8 possibile svuotare completamente il buffer di un decoder multimediale",
+        "correct": false
+      },
+      {
+        "text": "quando un decoder multimediale non \u00e8 sincronizzato cno il resto del sistema operativo",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Lo scheduler si occupa di:",
+    "answers": [
+      {
+        "text": "cambiare il processo in esecuzione",
+        "correct": false
+      },
+      {
+        "text": "non \u00e8 correlato alla gestione dei processi",
+        "correct": false
+      },
+      {
+        "text": "selezionare il prossimo processo da eseguire",
+        "correct": true
+      },
+      {
+        "text": "eliminare dalla memoria un processo terminato",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "All\u2019interno di un i-node, che cosa indica il campo \u201ctipo di file\u201d?",
+    "answers": [
+      {
+        "text": "indica se il file \u00e8 accessibile in lettura, scrittura o entrambi",
+        "correct": false
+      },
+      {
+        "text": "distingue tra file, directory e file speciali",
+        "correct": true
+      },
+      {
+        "text": "rappresenta l\u2019estensione del file",
+        "correct": false
+      },
+      {
+        "text": "distingue i file contenenti dati da quelli eseguibili",
+        "correct": false
+      }
+    ]
   }
 ]
