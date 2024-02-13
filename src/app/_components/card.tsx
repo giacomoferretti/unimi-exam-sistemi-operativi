@@ -1,6 +1,6 @@
 export function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-[12rem] w-[36rem] items-center justify-center rounded-3xl border bg-white p-8 shadow-xl">
+    <div className="flex w-full items-center justify-center border bg-white px-16 py-8 shadow sm:w-[36rem] sm:rounded-md">
       {children}
     </div>
   );

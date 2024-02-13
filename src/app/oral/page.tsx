@@ -11,9 +11,20 @@ export default async function Orale() {
   return (
     <main className="flex min-h-full flex-col items-center justify-center">
       <Card>
-        <h1 className="text-center text-2xl font-bold">
-          {randomQuestion.question}
-        </h1>
+        <div className="w-full">
+          <h1 className="text-center text-2xl font-bold">
+            {randomQuestion.question}
+          </h1>
+          <div className="mt-8 flex items-center justify-center gap-4">
+            {randomQuestion.tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
       </Card>
 
       <ReloadPageButton />
