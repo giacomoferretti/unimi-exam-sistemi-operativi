@@ -35,7 +35,8 @@ export default async function Filter({ params }: { params: { seed: string } }) {
       <header className="sticky top-0 mx-auto flex max-w-2xl items-center justify-between rounded-b-md border border-t-0 bg-white p-4 shadow-sm">
         <Timer />
         <span>{truncatedSeed}</span>
-        <RandomSeedButton />
+        {/* <QuestionCount /> */}
+          <RandomSeedButton url="/filter/" />
       </header>
 
       <main className="min-h-full">
