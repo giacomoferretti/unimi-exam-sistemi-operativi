@@ -13,3 +13,19 @@ export const sfc32 = (a: number, b: number, c: number, d: number) => {
     return (t >>> 0) / 4294967296;
   };
 };
+
+export const randomRange = (
+  min: number,
+  max: number,
+  randomFunction = Math.random,
+  inclusive = true,
+) => {
+  return Math.floor(randomFunction() * (max - min + (inclusive ? 1 : 0))) + min;
+};
+
+export const randomChoice = <T>(
+  choices: readonly T[],
+  randomFunction = Math.random,
+) => {
+  return choices[Math.floor(randomFunction() * choices.length)]!;
+};
