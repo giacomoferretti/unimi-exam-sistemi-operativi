@@ -27,10 +27,21 @@ export const Timer = () => {
     setCurrent(Date.now());
   }, 1000);
 
+  const dateStr = new Date(current - start.current).toISOString().substr(14, 5);
+
   return (
     <>
       <span className="font-semibold text-gray-900">
-        {new Date(current - start.current).toISOString().substr(11, 8)}
+        {dateStr.split(":").map((part, index) => {
+          return (
+            <>
+              <span key={index} className="tabular-nums">
+                {part}
+              </span>
+              {index < 1 ? <span className="text-gray-600">:</span> : null}
+            </>
+          );
+        })}
       </span>
     </>
   );
