@@ -12,4 +12,5 @@ export type OralQuestion = {
   question: string;
   answer: string;
   tags: Array<string>;
+  isProfessorQuestion: boolean;
 };
