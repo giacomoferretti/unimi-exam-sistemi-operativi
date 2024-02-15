@@ -28,7 +28,7 @@ export default async function Filter({ params }: { params: { seed: string } }) {
   const questions = extractFilterQuestions(filtro, 20, false, random);
 
   const truncatedSeed =
-    params.seed.length > 12 ? params.seed.slice(0, 12) + "..." : params.seed;
+    params.seed.length > 12 ? params.seed.slice(0, 12) + "…" : params.seed;
 
   return (
     <div className="bg-gray-50">
