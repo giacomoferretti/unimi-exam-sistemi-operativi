@@ -718,5 +718,17 @@
     "answer": "",
     "tags": ["memory"],
     "isProfessorQuestion": true
+  },
+  {
+    "question": "Condizione di schedulabilità (spiegazione)",
+    "answer": "",
+    "tags": ["scheduling"],
+    "isProfessorQuestion": true
+  },
+  {
+    "question": "Anomalia di Belady e algoritmi in cui si presenta",
+    "answer": "",
+    "tags": ["algorithm", "memory"],
+    "isProfessorQuestion": true
   }
 ]
