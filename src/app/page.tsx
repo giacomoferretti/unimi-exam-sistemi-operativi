@@ -26,7 +26,7 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        <p className="mt-10 text-center text-sm text-gray-500">v0.0.1</p>
+        <p className="mt-10 text-center text-sm text-gray-500">v0.0.2</p>
       </div>
     </div>
   );
