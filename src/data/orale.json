@@ -348,7 +348,7 @@
     "isProfessorQuestion": true
   },
   {
-    "question": "Trashing",
+    "question": "Thrashing",
     "answer": "",
     "tags": ["memory"],
     "isProfessorQuestion": true
@@ -368,7 +368,7 @@
   {
     "question": "Cos'è una free list e problema nella gestione",
     "answer": "",
-    "tags": ["memory"],
+    "tags": ["file-system"],
     "isProfessorQuestion": true
   },
   {

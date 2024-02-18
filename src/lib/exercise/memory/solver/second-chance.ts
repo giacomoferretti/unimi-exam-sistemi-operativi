@@ -12,7 +12,7 @@ export const solveSecondChance: MemoryExerciseSolver = (problem) => {
     problem.requests.length,
   ).fill(false);
 
-  const frameReferences: Array<boolean> = [];
+  const frameReferences: Array<boolean> = []; // R bit
   problem.requests.forEach((request, i) => {
     // Skip if the request is already in the frames
     if (frames.includes(request)) {
@@ -27,15 +27,19 @@ export const solveSecondChance: MemoryExerciseSolver = (problem) => {
     if (frames.length < problem.memorySize) {
       frames.push(request);
       frameReferences.push(true);
+
       pageFaults[i] = true;
       solution.push([...frames]);
       return;
     }
 
-    // Find the first frame with a reference bit of 0 (fifo)
+    // Find the first frame with a reference bit of 0
     let idx = frameReferences.indexOf(false);
     if (idx === -1) {
+      // If no frame has a reference bit of 0, reset all the reference bits
       frameReferences.fill(false);
+
+      // Remove the first frame (FIFO)
       idx = 0;
     }
 

@@ -1,18 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EyeIcon } from "lucide-react";
 
 import { cn } from "~/utils";
 
-export const ClickToReveal = ({ children }: { children: React.ReactNode }) => {
+export const ClickToReveal = ({
+  children,
+  show,
+  setShow,
+}: {
+  children: React.ReactNode;
+  show?: boolean;
+  setShow?: (show: boolean) => void;
+}) => {
   const [isRevealed, setIsRevealed] = useState(false);
+
+  const handleClick = () => {
+    if (setShow) {
+      setShow(true);
+    } else {
+      setIsRevealed(true);
+    }
+  };
+
+  useEffect(() => {
+    if (show !== undefined) {
+      setIsRevealed(show);
+    }
+  }, [show]);
 
   return (
     <div
-      onClick={() => {
-        setIsRevealed(true);
-      }}
+      onClick={handleClick}
       className={cn("relative", { "cursor-pointer": !isRevealed })}>
       {children}
 

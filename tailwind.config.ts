@@ -10,7 +10,20 @@ export default {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         // mono: ["var(--font-mono)", ...fontFamily.mono],
       },
+      animation: {
+        spinner: "spinner 1.2s linear 0s infinite normal none running",
+      },
+      keyframes: {
+        spinner: {
+          "0%%": { opacity: "1" },
+          "100%": { opacity: "0.15" },
+        },
+      },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("tailwindcss-animate"),
+  ],
 } satisfies Config;

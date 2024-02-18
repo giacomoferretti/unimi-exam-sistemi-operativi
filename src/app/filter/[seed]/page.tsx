@@ -1,4 +1,5 @@
 import { xxhash128 } from "hash-wasm";
+import { SendHorizontalIcon } from "lucide-react";
 
 import filtro from "~/data/filtro.json";
 // import { RenderingInfo } from "~/ui/rendering-info";
@@ -31,12 +32,18 @@ export default async function Filter({ params }: { params: { seed: string } }) {
     params.seed.length > 12 ? params.seed.slice(0, 12) + "…" : params.seed;
 
   return (
+    // <QuestionProvider>
     <div className="bg-gray-50">
       <header className="sticky top-0 mx-auto flex max-w-2xl items-center justify-between rounded-b-md border border-t-0 bg-white p-4 shadow-sm">
         <Timer />
         <span>{truncatedSeed}</span>
         {/* <QuestionCount /> */}
+        <div className="space-x-2">
           <RandomSeedButton url="/filter/" />
+          <button className="inline-flex size-10 items-center justify-center whitespace-nowrap rounded-md border bg-white text-sm font-medium text-gray-900 ring-offset-white transition-colors hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
+            <SendHorizontalIcon className="size-4" />
+          </button>
+        </div>
       </header>
 
       <main className="min-h-full">
@@ -50,6 +57,9 @@ export default async function Filter({ params }: { params: { seed: string } }) {
               </li>
             ))}
           </ol>
+          <div>
+            <button type="submit">Invia</button>
+          </div>
         </div>
       </main>
 
@@ -57,5 +67,6 @@ export default async function Filter({ params }: { params: { seed: string } }) {
         <RenderingInfo type="ssr" />
       </div> */}
     </div>
+    // </QuestionProvider>
   );
 }
