@@ -110,8 +110,8 @@ Un processo può essere creato:
 
 1. All'inizializzazione del sistema
 2. All'esecuzione di una system call da parte di un altro processo (`fork`, `exec`, `CreateProcess`)
-3. Su richiesta dell’utente di creare un nuovo processo (Vedi 2)
-4. Inizio di un job in un sistema batch: ma questo viene eseguito da un processo (Vedi 2)
+<!-- 3. Su richiesta dell’utente di creare un nuovo processo (Vedi 2)
+4. Inizio di un job in un sistema batch: ma questo viene eseguito da un processo (Vedi 2) -->
 
 ## Quando si fa scheduling?
 
@@ -335,11 +335,21 @@ Il dispatcher è il modulo del sistema operativo che si occupa di passare il con
 
 ## RMS
 
-<!-- TODO -->
+**RMS (Rate Monotonic Scheduling)**: politica di scheduling a **priorità statica** (priorità inversamente proporzionale al **periodo**, dunque processi brevi schedulati prima) pensata appositamente per i processi periodici:
+
+- il **burst di ogni processo** deve **terminare entro lo scadere del suo periodo**,
+- **non** ci sono **dipendenze tra processi**,
+- i **burst** richiesti sono **sempre gli stessi**,
+- la **prelazione della CPU** ha un **overhead negligibile**,
+- i **processi non periodici** sono **schedulati solo se la CPU non ha altro da fare**.
+- Funziona soltanto se l’impegno richiesto al sistema è minore del 70% in riferimento alla condizione di schedulabilità dei processi periodici: $\sum_{i=1}^m\left(\frac{C_i}{P_i}\right)\leq m\left(\sqrt[m]{2}-1\right)$ dove $\lim_{m\rightarrow\infty}m\left(\sqrt[m]2-1\right)=\ln2 \sim 0.7$
 
 ## EDS / EDFS
 
-<!-- TODO -->
+**EDF (Earliest Deadline First)**: è un algoritmo real time generico, non pensato appositamente per i multimedia. Prevede **priorità dinamiche**:
+
+- ogni processo riceve una priorità inversamente proporzionale al tempo rimanente alla sua deadline,
+- non è più necessario che i processi siano periodici e che abbiano lo stesso burst
 
 ## Differenza tra processo periodico e processo non periodico
 
@@ -410,7 +420,7 @@ Nel fair-shared, ogni utente riceverà la stessa quantità di CPU, mentre nel ga
 ## Gestione della memoria libera
 
 - **Bitmap** - ogni unità di allocazione ha un bit associato, 1 se è occupato, 0 se è libero. Il problema è che se la memoria è grande, la bitmap diventa grande. Inoltre, non è efficiente per trovare un blocco di memoria libero.
-- **Lista collegata** - una lista di tutti i frame liberi
+- **Lista collegata** - una lista di tutti i frame liberi <!-- TODO ADD SOMETHING HERE -->
 
 ## Algoritmi per la frammentazione esterna
 
@@ -449,7 +459,7 @@ Ogni **pagina** è un intervallo di indirizzi contigui. Queste pagine sono mappa
 
 Lo spazio degli indirizzi virtuali è suddiviso in unità di dimensione fissa, chiamate **pagine**.
 
-Le unità corrispondenti nella emoria fisica sono chiamate **frame** (o page frame).
+Le unità corrispondenti nella memoria fisica sono chiamate **frame** (o page frame).
 
 Pagine e frame sono della stessa dimensione, di solito vanno da 512 byte a 64KB.
 
@@ -705,11 +715,13 @@ In questo caso la voce della directory può essere più corta: solo il nome del 
 
 una directory è un file che contiene una lista di file e directory. Ogni voce nella directory contiene il nome del file e un puntatore al file.
 
+Per tener traccia dei file, i file system normalmente hanno directory o cartelle, che in molti sistemi sono anch'esse dei file.
+
 ## I-node. Come è formato e cosa contiene (quali sono i campi)?
 
 Gli attributi contengono la dimensione del file, tre orari (creazione, ultimo accesso e ultima modifica), proprietario, gruppo, informazioni di protezione e il numero di voci di directory che punta a quel file. L'ultimo campo è necessario a causa dei link.
 
-I primi 12 indirizzi del disco sono memorizzati nell'i-node stesso, così per i file piccoli tutte le informazioni necessarie sono nell'i-node, letto dal disco in memoria principale quando è aperto il file.
+I primi 10 indirizzi del disco sono memorizzati nell'i-node stesso, così per i file piccoli tutte le informazioni necessarie sono nell'i-node, letto dal disco in memoria principale quando è aperto il file.
 Per qualche file piuttosto grande, uno degli indirizzi nell'i-node è l'indirizzo di un blocco del disco chiamato blocco indiretto singolo (single indirect block). Questo blocco contiene indirizzi aggiuntivi del disco.
 Se anche questo non basta vi è nell'i-node un altro indirizzo contenente una lista di blocchi indiretti singoli, chiamato blocco indiretto doppio (double indirect block). Ognuno di questi blocchi indiretti singoli punta a un qualche centinaio di blocchi di dati. Se non fosse ancora sufficiente può essere usato un blocco indiretto triplo (triple indirect block).
 
@@ -729,6 +741,8 @@ Ogni file ha un i-node **contenente i metadati del file** (non il nome) ed una s
 
 ## FAT (FAT32, FAT16)
 
+<!-- TODO: Check me -->
+
 L'accesso casuale è inoltre molto più semplice.
 
 La FAT sta sul disco e il sistema ne tiene una parte in memoria, con cui lavorare per continuare a leggere su disco, e periodicamente aggiornata.
@@ -747,9 +761,13 @@ Il limite dipende dallo spazio di indirizzamento: $2^{16}$ entry → $2^{16}$ da
 
 <!-- la grandezza massima del disco dipende dalla grandezza del settore (2TB with 512B, 16TB with 4KB) -->
 
-## VFS
+## VFS (Virtual File System) e V-Node
 
-## LVM
+Il VFS è un layer software che si trova tra il file system e il resto del sistema operativo. Il VFS permette di utilizzare diversi file system in maniera trasparente, senza dover modificare il codice del sistema operativo.
+
+V-node è una struttura dati che rappresenta un file all'interno del VFS. Ogni file ha un v-node associato. Il v-node contiene informazioni come il tipo di file, i permessi di accesso, il proprietario, la dimensione del file, i puntatori ai blocchi di dati e i puntatori ai blocchi di indirizzamento.
+
+## LVM (Logical Volume Manager)
 
 ## LVM e differenza con RAID
 
@@ -761,20 +779,79 @@ Il limite dipende dallo spazio di indirizzamento: $2^{16}$ entry → $2^{16}$ da
 
 ## Cos'è una free list e problema nella gestione
 
-## Virtual file system e V-Node
+Uno dei metodi per gestire i blocchi liberi è quello delle **free-list**. Esso consiste in una lista **contenente i numeri dei data block disponibili**.
+
+Una parte della lista si trova in **memoria** (per un accesso più rapido), mentre l'altra in zona **swap** (perché la memoria ha una grandezza limitata).
+
+Questa suddivisione porta però a una problematica, ovvero, quando si ha una **lista quasi vuota** si rischia di avere un **aumento di richieste di I/O** su disco. Una **possibile soluzione** è quella di **tenere due free-list** mezze occupate in memoria, in modo tale da avere abbastanza blocchi liberi su tutte e due le liste, evitando così di fare operazioni costose su disco.
 
 ## File ad allocazione contigua
+
+Implementando i file con allocazione contigua, ogni file inizia in un nuovo blocco. Quindi se un file occupa 2.5 blocchi parte del disco andrà sprecata.
+
+Viene ancora **utilizzato in sistemi molto lenti in cui non vengono cancellati i dati**. È **conveniente per l’accesso casuale**: per andare al byte 1000 basta sapere dove incomincia e andare avanti di 1000 posizioni.
+
+## File ad allocazione a liste collegate
+
+La prima parola di ciascun blocco è un puntatore al blocco successivo.
+
+Non viene perso spazio in frammentazione del disco.
+
+Implementando i file con allocazione a liste collegate, ogni blocco contiene un puntatore al blocco successivo. Questo sistema è molto più flessibile, ma è anche molto più lento.
+
+L'accesso casuale è estremamente lento, perché per trovare un blocco bisogna partire dal primo e andare avanti fino a trovare quello giusto.
+
+## File ad allocazione a liste collegate con tabella in memoria
+
+<!-- TODO -->
+
+Implementando i file con allocazione a liste collegate con tabella in memoria, si cerca di coniugare i vantaggi dei due sistemi precedenti. Ogni file ha una tabella in memoria che contiene i puntatori ai blocchi del file. Questo sistema è molto più veloce, ma richiede più spazio in memoria.
 
 <!-- I/O -->
 ## Come si può fare I/O?
 
+<!-- TODO -->
+
+- **I/O programmato** - la CPU si occupa di tutto. La CPU continua ad interrogare il dispositivo per vedere se è pronto ad accettarne un altro, comportamento chiamato **polling** o **busy waiting**.
+- **I/O tramite interrupt** - la CPU manda un comando al dispositivo e cambia contesto. Quando il dispositivo ha finito, genera un **interrupt**. Questo interrupt ferma il processo attuale e salva il suo stato. Poi è eseguita la procedura di servizio dell'interrupt della stampante.
+- **I/O con DMA** - ???
+
+<!-- Si può fare I/O programmato, oppure I/O tramite interrupt, oppure I/O con DMA. -->
+
 ## DMA e I/O tramite DMA
+
+L’I/O tramite Direct Memory Access è nato per **evitare che la CPU dovesse andarsi a prendere i dati dalla periferica**. Il DMA continua ad utilizzare gli **interrupt**, ma **al loro arrivo i dati devono essere già in memoria**. Viene perciò aggiunto un dispositivo hardware, il **DMA controller**.
+
+1. Quando la **CPU** deve fare un’operazione di I/O non **chiede** più alla periferica ma **al DMA controller**, che ha una serie di registri interni per gestire diverse richieste.
+2. Il **DMA controller si interfaccia con il controller della periferica** chiedendo di fare un’operazione di I/O e **indicando la posizione nella memoria in cui devono essere depositati i dati**.
+3. La **periferica**, **in totale autonomia**, **scrive i dati in memoria centrale** nella posizione indicata dal DMA controller.
+4. Il **controller del dispositivo avvisa il DMA della fine dell’operazione con un ack**, non con un interrupt.
+5. Il **DMA controller**, quando rileva che l’operazione è terminata, **invia un interrupt alla CPU**. All’arrivo dell’interrupt, la CPU sa che i dati sono già in memoria nella posizione richiesta.
+
+Vi sono due punti critici:
+
+1. Il **trasferimento dati**: se prima era la CPU ad intasare il bus, ora è il controller della periferica che trasferisce i dati in memoria. Questo processo è ottimizzabile utilizzando una delle due modalità di trasferimento possibili:
+    1. **modalità burst**: il controller della periferica si prenota per l’utilizzo del bus, entrando in competizione per il suo utilizzo. Quando il bus è disponibile, effettua un burst di trasferimento verso la memoria centrale;
+    2. **cycle stealing**: si “ruba” un utilizzo del bus cercando un momento in cui questo non è utilizzato e trasferendo la quantità massima di dati possibile per quello slot. In questo modo si disturbano meno le operazioni a priorità più alta.
+2. **Interrupt**: solitamente non arriva un interrupt alla volta ed essendo bit, segnali elettrici, non possono essere messi in coda. Viene utilizzato perciò l’**interrupt controller**, dotato di un buffer interno per poter gestire più interrupt, che **si frappone tra la CPU e il resto del sistema come oggetto che riceve gli interrupt**. All’arrivo di un interrupt, il controller preleva dal bus dati l’identificativo della periferica che ha generato l’interrupt e lo mette in coda all’interno del suo buffer.
 
 ## I/O programmato
 
+Utilizzando l’I/O programmato, il processo sposta il blocco di informazione da stampare nel kernel che fa busy waiting: manda la prima informazione da stampare, aspetta che si stampi, poi manda la seconda e così via. Mentre si stampa, non si può fare nient’altro.
+
 ## I/O mappato in memoria
 
+Con l’I/O mappato in memoria il **kernel** deve soltanto **depositare l’informazione da stampare nel punto giusto in memoria**. Utilizzando anche la MMU, viene presa questa **zona di memoria** e viene **fatta coincidere con il buffer di un dispositivo** per cui scrivere/leggere in una determinata zona di memoria significa scrivere/leggere nel registro di un controller del dispositivo. La traduzione viene fatta dal device driver.
+
+Vi sono tre possibilità:
+
+- **Due spazi di indirizzamento separati**: uno per i dati, l’altro per i dati delle periferiche. I due spazi non si vedono, non si toccano e quindi si hanno meno bug. In questo modo però la CPU deve avere istruzioni specifiche per andare ad operare nello spazio delle porte.
+- **Stesso spazio degli indirizzi, tenendo tipicamente la parte finale dedicata alle periferiche**: in questo modo i processo possono interagire autonomamente con la periferica.
+- **Entrambi i metodi**: in uso nei moderni computer per questioni di retrocompatibilità.
+
 ## Se ho un sistema di i/o mappato in memoria, posso fare uso di i/o programmato?
+
+Si, è indipendente. L’I/O programmato è un modo di fare I/O, l’I/O mappato in memoria è qualcosa che viene dato a disposizione.
 
 <!-- Deadlock -->
 ## Algoritmo di Dijkstra
@@ -798,6 +875,19 @@ Uno stato non sicuro non corrisponde a uno stato di deadlock.
 
 ## Algoritmo del banchiere
 
+L’algoritmo del banchiere viene utilizzato per evitare i deadlock. L’algoritmo prevede che una risorsa richiesta venga allocata soltanto se il sistema rimane in uno stato sicuro.
+
+- Stato sicuro: esiste almeno uno scheduling delle risorse tale per cui tutti i processi termiano.
+- Stato non sicuro: non esiste almeno uno scheduling delle risorse tale per cui tutti i processi termiano. Non si è ancora in deadlock ma è inevitabile finirci.
+
+Per verificare se l’allocazione di una risorsa porta o meno ad uno stato sicuro, viene effettuata una simulazione utilizzando l’algoritmo delle due matrici e dei due vettori:
+
+- Si cerca un processo non marcato $P_i$ tale per cui la sua riga della matrice $R$ è minore o uguale ad $A$
+- Se esiste, questo processo viene marcato come terminato e le sue risorse (indicate nella sua riga di $C$ vengono sommate ad $A$)
+- Se non esiste, l’algoritmo termina
+
+Se anche solo un processo non è marcato come terminato, allora allocando quella risorsa non ci si mantiene in uno stato sicuro.
+
 ## Algoritmo dello struzzo, quando ha senso usarlo?
 
 L’algoritmo dello struzzo **ignora** i deadlock.
@@ -812,7 +902,41 @@ Ha senso ignorarli quando non è il problema più grave: se un sistema va in cra
 
 ## Buffer overrun e buffer underrun
 
+- **Buffer underrun**: si verifica quando la spezzata che indica quanti byte sono stati presi da disco e convertiti in frame (ricezione) si incontra con la spezzata che indica i frame visualizzati. Succede quando si cerca di leggere qualcosa da un buffer vuoto. Può essere visualizzato un frame nero (strisciate) oppure l’ultimo frame (video scatta).
+- **Buffer overrun**: si verifica quando per qualche ragione si blocca qualcosa per poi ritrovarsi con una quantità di dati che il buffer non riesce a gestire per cui qualcosa può andare perso. Si verifica quando la distanza verticale tra le due spezzate supera la capacità che il buffer ha fisicamente a disposizione. La perdita di dati non è un problema perché il dato multimediale è costruito per tollerarlo: può essere mandato del rumore (dati a caso) o degli zeri (buio). Prima o poi ci si riprenderà
+
+Come si può evitare? Riempiendo il buffer a metà e per poi iniziare a consumare
+
 ## GoP, derivazioni su scheduling e file system (Datablock > GoP; Datablock < GoP)
+
+Un **Group of Picture** è una **serie di frame che inizia con un I-frame seguito da una sequenza di B-frame e P-frame**:
+
+- **I-frame** codificati come jpeg2000,
+- **P-frame** codificati come differenza rispetto all’I-frame che li precede e includono il motion vector,
+- **B-frame** codificati come differenza con gli I-frame e P-frame che li precedono e seguono.
+
+Per poter implementare le funzioni VCR, è necessario **saltare in maniera efficiente da un I-frame all’altro**. Per renderlo possibile, bisogna agire sul sistema operativo:
+
+1. **tempo di elaborazione minimo**: scheduler specializzato,
+2. **tempo di estrazione più uniforme possibile**: file system specializzato,
+3. **funzionalità VCR**: file system specializzato.
+
+I **processi multimediali** sono una **categoria di processi real time specifica**: **processi periodici**, ovvero processi che hanno lo **stesso burst di CPU**, hanno **scadenze temporali ricorrenti e note a priori**. È possibile stabilire una **condizione di schedulabilità**: $\sum_{i=0}^m\frac{C_i}{P_i}\leq 1$.
+
+Si può utilizzare **RMS**, **specializzato per i processi periodici**, funzionante solo se la richiesta al sistema di calcolo è inferiore al 70% ($\sum_{i=0}^m\frac{C_i}{P_i}\leq m\left(\sqrt[m]2-1\right)$, dove $\lim_{m\rightarrow\infty}m\left(\sqrt[m]2-1\right)=\ln 2\sim 0.7$); oppure **EDS**, un **algoritmo di scheduling real time generico**.
+
+Per il **file system** vengon **aggiunti ai file dei metadati: array di indici che puntano a segmenti di disco dove sono memorizzati in maniera sequenziale un I-frame seguito da tutto il suo GoP**. Ora, anziché saltare da un I-frame all’altro si salta da un GoP all’altro, operazione semplice se è nota la composizione del file system. Viene perciò costruita una **mappa dove viene segnata la sequenza di datablock dove cominciano i GoP**.
+
+La **discriminante** è la **dimensione dei datablock**:
+
+- **dimensione datablock < dimensione GoP**:
+  - si utilizzano i **frame index**,
+  - si deve **gestire l’allocazione sequenziale**,
+  - la **frammentazione interna** è molto **bassa**,
+- **dimensione datablock > dimensione GoP**:
+  - si utilizzano i **block index**,
+  - non serve gestire allocazioni sequenziali,
+  - c’è **frammentazione interna**.
 
 ## I-frame, P-frame, B-frame
 
@@ -823,8 +947,34 @@ Ha senso ignorarli quando non è il problema più grave: se un sistema va in cra
 <!-- Cloud -->
 ## Differenza tra Hypervisor tipo 1 e tipo 2
 
+- **Hypervisor di tipo 1** - eseguito direttamente sull'hardware, senza un sistema operativo host. È chiamato anche "bare metal" o "native" e fornisce un'efficienza e prestazioni migliori.
+- **Hypervisor di tipo 2** - eseguito sopra un sistema operativo host. È chiamato anche "hosted" e fornisce una maggiore flessibilità.
+
 ## Virtualizzazione dell'OS
+
+Viene utilizzata per poter **eseguire due o più sistemi operativi nella stessa macchina**.
+
+- **Hypervisor di tipo 1**: quando si deve eseguire un’istruzione privilegiata sul sistema operativo ospite, l’**hardware esegue una trap verso l’hypervisor** cosìcché l’**istruzione** possa essere **emulata via software**.
+- **Machine simulator**: si migliorarono le prestazione **traducendo blocchi di codice al volo e memorizzandoli in una cache interna**, così da poter essere riutilizzati nel caso in cui dovessero essere nuovamente eseguiti.
+- **Hypervisor di tipo 2**: a differenza di un hypervisor di tipo 1, l’hypervisor di tipo 2 **utilizza il sistema operativo ospitante e il suo file system** per creare processi, memorizzare file e così via. Quando si avvia un **hypervisor di tipo 2**, questo **legge il file di installazione del sistema operativo ospite** e **lo installa su un disco virtuale**, ovvero un **file di grandi dimensioni sul file system ospitante**.
 
 ## SPI (SaaS, PaaS, IaaS)
 
-## Elasticità vs scalabilità (cloud)
+- **SaaS** - Il **software** non è gestito dall’utente ed è **erogato come servizio su piattaforme virtualizzate**.
+  - Vantaggi: **scalabilità**, **user friendly**, **costo contenuto**
+  - Svantaggi: **sicurezza ricade sulla società di hosting**, **non si ha alcun controllo sulle altre applicazioni**
+- **PaaS** - Macchina virtuale già gestita per gli sviluppatori.
+  - Vantaggi: **molta possibilità di personalizzazione**, **non richiede molta manutenzione**
+  - Svantaggi: **non rispetta gli standard di sicurezza PCI**, **necessario scrivere applicazioni ad-hoc**
+- **IaaS** - Risorse hardware virtualizzate per i progettisti di sistemi.
+  - Vantaggi: **immagini della macchina VPS possono essere salvate su file**, **costo inferiore**
+  - Svantaggi: **non aderisce agli standard PCI**, **fornitore si riserva la possibilità di spegnere il servizio o riprendersi risorse**
+
+- **SaaS** (**Software as a Service**): software **per l’utente finale**. Il **software** non è gestito dall’utente ed è **erogato come servizio su piattaforme virtualizzate**. Non è necessario alcun tipo di configurazione. Solitamente, vi sono due tipi di offerta: **virtualizzazione di sistemi interni di grandi aziende**, come il CRM, oppure uno **spazio di server condiviso virtualizzato in cui mettere ciò che si vuole**. SaaS è migliore di un normale server condiviso poiché con SaaS, il **sito web esiste in un contenitore virtuale**, che può essere **spostato da server fisico a server fisico senza interruzione del servizio**. È **vantaggioso** per la sua **scalabilità**, il suo essere estremamente **user friendly** e il **costo contenuto** in presenza di requisiti semplici e se non ci si aspetta un traffico elevato. È **svantaggioso** perché la **sicurezza ricade sulla società di hosting** e non si ha alcun **controllo sulle altre applicazioni** che condividono lo stesso server.
+- **PaaS** (**Platform as a Service**): macchina virtuale già gestita per gli sviluppatori. Il **sistema operativo** è **imposto**. È una via di mezzo tra SaaS e IaaS: è molto **più personalizzabile di SaaS** ma **non richiede tutta la configurazione e la manutenzione di un VPS di un IaaS**. È **vantaggioso** perché, pur fornendo **molta possibilità** di personalizzazione, **non** richiede molta **manutenzione**. È **svantaggioso** perché **non rispetta gli standard di sicurezza PCI**, quindi non è adatto ad ospitare un e-commerce; inoltre, è necessario **scrivere applicazioni ad-hoc** e la **migrazione** ad un server fisico standard potrebbe **non** essere così **semplice**.
+- **IaaS** (**Infrastructure as a Service**): risorse hardware virtualizzate per i progettisti di sistemi. Vengono **fornite solo le risorse di calcolo**. Viene fornito l’accesso ad un **VPS** (Virtual Private Server) il cui accesso è praticamente indistinguibile dall’accesso ad un server fisico remoto standard. È **vantaggioso** perché le **immagini della macchina VPS** possono essere salvate su **file**, a run time, fornendo una procedura di **backup** molto comoda. Il **costo** è leggermente **inferiore** a quello di una piattaforma standard equivalente. È però svantaggioso perché **non aderisce agli standard PCI** e il **fornitore si riserva la possibilità di spegnere il servizio o riprendersi risorse** in caso di necessità o se qualcosa non torna.
+
+## Elasticità vs scalabilità
+
+- Con **elasticità** si intende la possibilità di aggiungere e togliere risorse in base alle necessità
+- Con **scalabilità** si intende la capacità del sistema di mantenere inalterata la sua efficienza anche all’aumentare del carico
