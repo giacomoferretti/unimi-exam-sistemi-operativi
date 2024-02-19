@@ -110,8 +110,11 @@ Un processo può essere creato:
 
 1. All'inizializzazione del sistema
 2. All'esecuzione di una system call da parte di un altro processo (`fork`, `exec`, `CreateProcess`)
-<!-- 3. Su richiesta dell’utente di creare un nuovo processo (Vedi 2)
-4. Inizio di un job in un sistema batch: ma questo viene eseguito da un processo (Vedi 2) -->
+
+(Le seguenti sono superflue, dato che derivano dal punto 2.)
+
+3. Su richiesta dell’utente di creare un nuovo processo (Vedi 2)
+4. Inizio di un job in un sistema batch: ma questo viene eseguito da un processo (Vedi 2)
 
 ## Quando si fa scheduling?
 
@@ -139,13 +142,13 @@ CPU bound significa che il processo passa la maggior parte del tempo a fare calc
 
 ## Chi mi porta in stato di ready? E chi in blocked?
 
-Da running a ready ci pensa lo scheduler.
+Da **running** a **ready** ci pensa lo **scheduler**.
 
-Da blocked a ready ci pensa l'interrupt, tramite l'interrupt handler.
+Da **blocked** a **ready** ci pensa l'interrupt, tramite l'**interrupt handler**.
 
-Da running a blocked succede quando un processo fa una system call per esempio per leggere da disco.
+Da **running** a **blocked** succede quando un processo fa una **system call** per esempio per leggere da disco.
 
-Dallo stato di ready a running e viceversa ci pensa lo scheduler, dallo stato di esecuzione allo stato di bloccato è una system call mentre da bloccato a ready è un interrupt che viene sollevato dal processo in stato di bloccato.
+> Dallo stato di ready a running e viceversa ci pensa lo scheduler, dallo stato di esecuzione allo stato di bloccato è una system call mentre da bloccato a ready è un interrupt che viene sollevato dal processo in stato di bloccato.
 
 ## Cosa succede all'interno del kernel quando arriva un interrupt?
 
@@ -163,11 +166,11 @@ Dallo stato di ready a running e viceversa ci pensa lo scheduler, dallo stato di
 Un interrupt che lascia la macchina in uno stato ben preciso, si chiama interrupt preciso.
 
 - **Interrupt preciso**: quando arriva trova la CPU in uno stato ben preciso:
-  - il valore del PC è salvato in un posto conosciuto;
+  - il valore del PC (Program Counter) è salvato in un posto conosciuto;
   - tutte le istruzioni prima di quella puntata dal PC sono state eseguite completamente;
   - tutte le istruzioni successive a quella puntata dal PC non sono ancora state eseguite;
   - lo stato di esecuzione dell’istruzione puntata dal PC è noto.
-- **Interrupt non preciso**: al suo arrivo trova la CPU con istruzioni disordinate e non eseguite completamente.
+- **Interrupt non preciso**: al suo arrivo trova la CPU con istruzioni disordinate e non eseguite completamente. (non rispetta le 4 condizioni dell'interrupt preciso)
 
 <!-- Concurrency -->
 ## Cos'è la race condition?
