@@ -49,7 +49,7 @@ export const QuizPage = ({ questions }: QuizProps) => {
             <RefreshCcwIcon className="size-5" aria-hidden="true" />
           </button>{" "}
         </div>
-        <div className="grid flex-1 grid-cols-2 gap-4">
+        <div className="flex flex-1 grid-cols-2 flex-col gap-4 sm:grid">
           <div className="flex items-center justify-center">
             <span className="text-2xl font-bold">
               {questions[currentQuestion]!.question}

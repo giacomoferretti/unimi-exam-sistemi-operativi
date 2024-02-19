@@ -33,7 +33,7 @@ export const ClickToReveal = ({
   return (
     <div
       onClick={handleClick}
-      className={cn("relative", { "cursor-pointer": !isRevealed })}>
+      className={cn("relative flex-1", { "cursor-pointer": !isRevealed })}>
       {children}
 
       {!isRevealed && (
